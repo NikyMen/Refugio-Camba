@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://refugiocamba.com.ar/sitemap.xml
