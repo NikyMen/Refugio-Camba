@@ -9,10 +9,10 @@ export default function ReviewsContent({ compact = false }) {
       </div>
 
       <div className="review-meta">
-        <span>Cómo funcionan las evaluaciones</span>
-        <span>Más relevantes</span>
+        <span>5,0 · 4 evaluaciones</span>
+        <span>Más recientes</span>
         <a
-          href="https://www.airbnb.com.ar/rooms/1674699382362407455/reviews?source_impression_id=p3_1778210916_P3-o7PPaG3po_jQk&scroll_to_review=1679861791552029259"
+          href="https://www.airbnb.com.ar/rooms/1674699382362407455/reviews?source_impression_id=p3_1778625466_P3Fx9rUc49MSEd-L"
           target="_blank"
           rel="noreferrer"
         >
@@ -21,6 +21,32 @@ export default function ReviewsContent({ compact = false }) {
       </div>
 
       <div className="review-grid">
+        <article className="review-card compact-review">
+          <div className="review-profile">
+            <span>P</span>
+            <div>
+              <h3>Patricio</h3>
+              <p>Corrientes, Argentina</p>
+            </div>
+          </div>
+          <div className="rating-row" aria-label="Calificación: 5 estrellas">★★★★★</div>
+          <p className="review-date">Hoy · Estadía de algunas noches</p>
+          <p>Impecable, muy recomendable.</p>
+        </article>
+
+        <article className="review-card compact-review">
+          <div className="review-profile">
+            <span>J</span>
+            <div>
+              <h3>José Raúl</h3>
+              <p>Hace 10 años que está en Airbnb</p>
+            </div>
+          </div>
+          <div className="rating-row" aria-label="Calificación: 5 estrellas">★★★★★</div>
+          <p className="review-date">Hace 2 días · Estadía de algunas noches</p>
+          <p>El departamento precioso y Cynthia muy atenta con nosotros. Se recomienda.</p>
+        </article>
+
         <article className="review-card featured-review">
           <div className="review-profile">
             <span>C</span>
@@ -30,7 +56,7 @@ export default function ReviewsContent({ compact = false }) {
             </div>
           </div>
           <div className="rating-row" aria-label="Calificación: 5 estrellas">★★★★★</div>
-          <p className="review-date">Hace 2 días · Estadía de algunas noches</p>
+          <p className="review-date">Hace 6 días · Estadía de algunas noches</p>
           <p>
             Quedamos encantados con este hospedaje y, sobre todo, con la hospitalidad de Cinthia y su esposo. Desde
             antes de nuestra llegada estuvieron muy atentos y siempre disponibles para ayudarnos con cualquier duda o
@@ -40,10 +66,6 @@ export default function ReviewsContent({ compact = false }) {
             El lugar superó nuestras expectativas: es incluso más lindo que en las fotos y estaba impecable. La conexión
             a internet es buena, ideal si necesitas trabajar o mantenerte conectado.
           </p>
-          <div className="host-reply">
-            <strong>Respuesta de Cynthia</strong>
-            <span>Gracias por tu excelente calificación, Carlos. Fue un placer ser tu anfitrión.</span>
-          </div>
         </article>
 
         <article className="review-card compact-review">
@@ -55,7 +77,7 @@ export default function ReviewsContent({ compact = false }) {
             </div>
           </div>
           <div className="rating-row" aria-label="Calificación: 5 estrellas">★★★★★</div>
-          <p className="review-date">Hoy · Estadía de una noche</p>
+          <p className="review-date">Hace 4 días · Estadía de una noche</p>
           <p>
             Hermoso lugar, cálido y una decoración y limpieza que te hacen sentir en un hotel 5 estrellas. Cynthia y su
             marido muy buenos anfitriones. Altamente recomendable.
