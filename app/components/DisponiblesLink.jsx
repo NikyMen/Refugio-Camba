@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function DisponiblesLink({ href = "/alquiler-1473#disponibilidad" }) {
+export default function DisponiblesLink({ href = "/#alquileres" }) {
   const ref = useRef(null);
 
   useEffect(() => {
