@@ -11,7 +11,7 @@ export default function Topbar() {
       <nav className="home-nav" aria-label="Principal">
         <a href="/">Inicio</a>
         <a href="/nosotros">Nosotros</a>
-        <a href="/resenas">Reseñas</a>
+        <a href="/#resenas">Reseñas</a>
         <DisponiblesLink />
       </nav>
     </header>
