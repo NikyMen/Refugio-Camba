@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import AvailabilityCalendar from "./components/AvailabilityCalendar";
 import DisponiblesLink from "./components/DisponiblesLink";
+import ReviewsContent from "./components/ReviewsContent";
+import Topbar from "./components/Topbar";
 
 const spaces = [
   {
@@ -164,16 +165,7 @@ export default function Home() {
   return (
     <main className="page">
       <section className="shell home-shell" aria-label="Inicio">
-        <header className="topbar">
-          <a className="logo-link" href="/" aria-label="Ir al inicio">
-            <img src="/assets/logo.jpeg" alt="Refugio Camba" />
-          </a>
-          <nav className="home-nav" aria-label="Principal">
-            <a href="/nosotros">Nosotros</a>
-            <a href="/resenas">Reseñas</a>
-            <DisponiblesLink />
-          </nav>
-        </header>
+        <Topbar />
 
         <section className="home-hero" aria-label="Refugio Camba">
           <div>
@@ -181,37 +173,26 @@ export default function Home() {
             <h1>Tu lugar tranquilo en Corrientes</h1>
             <p>Una estadía simple, cálida y bien ubicada para moverte fácil por la ciudad.</p>
           </div>
-          <a href="/alquiler-1473#disponibilidad">Ver disponibilidad</a>
+          <a href="#alquileres">Ver alquileres</a>
         </section>
 
-        <section className="featured-section" id="disponibilidad" aria-labelledby="featured-title">
+        <section className="featured-section" id="alquileres" aria-labelledby="alquileres-title">
           <div className="section-head">
-            <p className="eyebrow">Estadía disponible</p>
-            <h2 id="featured-title">Un refugio listo para disfrutar Corrientes</h2>
+            <p className="eyebrow">Alquileres temporales disponibles</p>
+            <h2 id="alquileres-title">Un refugio listo para disfrutar Corrientes</h2>
             <p>Ambientes cálidos, buena ubicación y todo preparado para llegar sin vueltas.</p>
           </div>
-
           <div className="listing-grid">
             <a className="listing-card" href="/alquiler-1473">
               <img src="/assets/refugio-camba/living.jpg" alt="San Luis 1473" />
               <span>Alquiler temporal</span>
               <h2>San Luis 1473</h2>
-              <p>San Luis 1473, Corrientes</p>
+              <p>Corrientes Capital</p>
             </a>
           </div>
         </section>
 
-        <section className="trust-section" aria-labelledby="trust-title">
-          <div>
-            <p className="eyebrow">Confianza real</p>
-            <h2 id="trust-title">Hospedajes que se recomiendan solos.</h2>
-          </div>
-          <p>
-            Huéspedes recientes destacan la limpieza, la atención de Cynthia y el cuidado de cada detalle. Leé sus
-            experiencias completas antes de reservar.
-          </p>
-          <a href="/resenas">Ver reseñas</a>
-        </section>
+        <ReviewsContent />
       </section>
     </main>
   );
@@ -253,8 +234,9 @@ export function PropertyDetail() {
           </a>
           <nav className="home-nav" aria-label="Principal">
             <a href="/">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
             <a href="/resenas">Reseñas</a>
-            <DisponiblesLink href="#disponibilidad" />
+            <DisponiblesLink />
           </nav>
           <a href={waLink} target="_blank" rel="noreferrer">
             <RoomIcon type="phone" />
@@ -335,9 +317,6 @@ export function PropertyDetail() {
             </a>
           </div>
         </article>
-        <div id="disponibilidad">
-          <AvailabilityCalendar title="Disponibilidad de San Luis 1473" compact />
-        </div>
       </section>
     </main>
   );
