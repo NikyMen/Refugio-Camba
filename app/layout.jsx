@@ -1,8 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "San Luis 1473 | Refugio Camba",
-  description: "Departamento temporal para 2 huéspedes en San Luis 1473, Corrientes.",
+  title: "Refugio Camba · Alquileres temporarios en Corrientes",
+  description:
+    "Estadías cuidadas para llegar y disfrutar Corrientes. Refugio Camba ofrece alquileres temporarios cálidos, ordenados y bien ubicados.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

@@ -1,5 +1,7 @@
-import DisponiblesLink from "../components/DisponiblesLink";
 import ReviewsContent from "../components/ReviewsContent";
+import SiteFooter from "../components/SiteFooter";
+import SiteHeader from "../components/SiteHeader";
+import WhatsAppFab from "../components/WhatsAppFab";
 
 export const metadata = {
   title: "Reseñas | Refugio Camba",
@@ -10,18 +12,11 @@ export default function ResenasPage() {
   return (
     <main className="page">
       <section className="shell reviews-page" aria-label="Reseñas">
-        <header className="topbar">
-          <a className="logo-link" href="/" aria-label="Ir al inicio">
-            <img src="/assets/logo.jpeg" alt="Refugio Camba" />
-          </a>
-          <nav className="home-nav" aria-label="Principal">
-            <a href="/">Inicio</a>
-            <a href="/nosotros">Nosotros</a>
-            <DisponiblesLink />
-          </nav>
-        </header>
+        <SiteHeader variant="inner" />
         <ReviewsContent compact />
+        <SiteFooter />
       </section>
+      <WhatsAppFab />
     </main>
   );
 }
