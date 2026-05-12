@@ -51,11 +51,12 @@ function buildDays(month) {
 
 export default function AvailabilityCalendar({ title = "Disponibilidad", compact = false }) {
   const [availability, setAvailability] = useState({ unavailableDates: [], notes: {} });
+  const [calendar, setCalendar] = useState({ today: "", months: [] });
   const [status, setStatus] = useState("Cargando disponibilidad...");
-  const today = toISODate(new Date());
 
   useEffect(() => {
     let active = true;
+    setCalendar({ today: toISODate(new Date()), months: [monthStart(0), monthStart(1)] });
 
     fetch("/api/availability", { cache: "no-store" })
       .then((response) => response.json())
@@ -78,7 +79,6 @@ export default function AvailabilityCalendar({ title = "Disponibilidad", compact
   }, []);
 
   const unavailable = useMemo(() => new Set(availability.unavailableDates), [availability.unavailableDates]);
-  const months = useMemo(() => [monthStart(0), monthStart(1)], []);
 
   return (
     <section className={compact ? "availability-card compact" : "availability-card"} aria-labelledby="availability-title">
@@ -99,7 +99,7 @@ export default function AvailabilityCalendar({ title = "Disponibilidad", compact
       {status ? <p className="calendar-status">{status}</p> : null}
 
       <div className="calendar-grid">
-        {months.map((month) => (
+        {calendar.months.map((month) => (
           <article className="month-card" key={toISODate(month)}>
             <h3>
               {MONTHS[month.getMonth()]} {month.getFullYear()}
@@ -114,7 +114,7 @@ export default function AvailabilityCalendar({ title = "Disponibilidad", compact
                 if (!date) return <span className="day empty" key={`empty-${index}`} />;
                 const iso = toISODate(date);
                 const blocked = unavailable.has(iso);
-                const isPast = iso < today;
+                const isPast = calendar.today ? iso < calendar.today : false;
                 const titleText = blocked
                   ? availability.notes[iso] || "No disponible"
                   : isPast
@@ -127,7 +127,7 @@ export default function AvailabilityCalendar({ title = "Disponibilidad", compact
                       "day",
                       blocked ? "blocked" : "",
                       isPast ? "past" : "",
-                      iso === today ? "today" : "",
+                      iso === calendar.today ? "today" : "",
                     ].join(" ")}
                     title={titleText}
                     aria-label={`${iso}: ${titleText}`}

@@ -70,17 +70,21 @@ function rangeDates(start, end) {
 }
 
 export default function AdminPage() {
-  const today = toISODate(new Date());
   const [unavailableDates, setUnavailableDates] = useState([]);
   const [notes, setNotes] = useState({});
-  const [startDate, setStartDate] = useState(today);
-  const [endDate, setEndDate] = useState(today);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [months, setMonths] = useState([]);
   const [reason, setReason] = useState("Uso personal");
   const [status, setStatus] = useState("Cargando disponibilidad...");
   const unavailable = useMemo(() => new Set(unavailableDates), [unavailableDates]);
-  const months = useMemo(() => [monthStart(0), monthStart(1), monthStart(2)], []);
 
   useEffect(() => {
+    const today = toISODate(new Date());
+    setStartDate(today);
+    setEndDate(today);
+    setMonths([monthStart(0), monthStart(1), monthStart(2)]);
+
     fetch("/api/availability", { cache: "no-store" })
       .then((response) => response.json())
       .then((data) => {
@@ -160,7 +164,7 @@ export default function AdminPage() {
       <section className="shell admin-shell" aria-label="Panel administrador">
         <header className="topbar">
           <a className="logo-link" href="/" aria-label="Ir al inicio">
-            <img src="/assets/logo.jpeg" alt="Refugio Camba" />
+            <img src="/assets/logo.png" alt="Refugio Camba" />
           </a>
           <nav className="home-nav" aria-label="Principal">
             <a href="/">Inicio</a>

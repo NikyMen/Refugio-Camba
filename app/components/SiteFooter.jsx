@@ -1,7 +1,6 @@
 import { phone, waLink } from "../data/listings";
 
 export default function SiteFooter() {
-  const year = new Date().getFullYear();
   return (
     <footer className="site-footer">
       <div>
@@ -26,7 +25,7 @@ export default function SiteFooter() {
         </p>
       </div>
       <div className="footer-bottom">
-        <span>© {year} Refugio Camba — Corrientes, Argentina</span>
+        <span>© Refugio Camba — Corrientes, Argentina</span>
         <span>Hecho con cuidado</span>
       </div>
     </footer>
