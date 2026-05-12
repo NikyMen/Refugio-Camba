@@ -1,7 +1,3 @@
-"use client";
-
-import DisponiblesLink from "./DisponiblesLink";
-
 export default function Topbar() {
   return (
     <header className="topbar">
@@ -12,7 +8,7 @@ export default function Topbar() {
         <a href="/">Inicio</a>
         <a href="/nosotros">Nosotros</a>
         <a href="/#resenas">Reseñas</a>
-        <DisponiblesLink />
+        <a className="primary" href="/alquiler-1473">Alquiler</a>
       </nav>
     </header>
   );

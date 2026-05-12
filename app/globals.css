@@ -157,14 +157,6 @@ h4 {
   border-color: var(--accent-dark);
 }
 
-.home-nav .disponibles-link {
-  min-height: 46px;
-  padding: 0 22px;
-  font-size: 0.96rem;
-  box-shadow: 0 12px 28px rgba(36, 58, 45, 0.22);
-  background: var(--accent);
-}
-
 .back-link {
   margin-left: auto;
   color: var(--muted) !important;
@@ -316,6 +308,13 @@ h4 {
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.05;
+}
+
+.section-copy p {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
 }
 
 .section-cta {
@@ -1197,247 +1196,6 @@ h4 {
   line-height: 1.6;
 }
 
-/* ── Availability ──────────────────────────────────────── */
-
-.availability-card {
-  display: grid;
-  gap: 18px;
-  padding: clamp(22px, 4vw, 38px);
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: 14px;
-}
-
-.availability-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.availability-head h2 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(1.9rem, 4vw, 3.2rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.availability-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-end;
-}
-
-.availability-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 600;
-}
-
-.available-dot,
-.blocked-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.available-dot {
-  background: var(--accent);
-}
-
-.blocked-dot {
-  background: var(--red);
-}
-
-.calendar-status,
-.admin-status {
-  min-height: 20px;
-  margin: 0;
-  color: var(--muted);
-}
-
-.calendar-grid,
-.admin-calendar {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.admin-calendar {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.month-card {
-  display: grid;
-  gap: 10px;
-  padding: 16px;
-  background: var(--paper-soft);
-  border: 1px solid var(--line-soft);
-  border-radius: 12px;
-}
-
-.month-card h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-
-.week-row,
-.day-grid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 6px;
-}
-
-.week-row span {
-  color: var(--muted);
-  text-align: center;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.day {
-  display: grid;
-  place-items: center;
-  min-width: 0;
-  aspect-ratio: 1;
-  color: var(--ink);
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.day.empty {
-  background: transparent;
-  border-color: transparent;
-}
-
-.day.past {
-  color: rgba(138, 120, 92, 0.7);
-  background: transparent;
-  border-color: transparent;
-}
-
-.day.today {
-  border-color: var(--accent);
-  color: var(--accent-dark);
-  font-weight: 800;
-}
-
-.day.blocked {
-  color: #fff;
-  background: var(--red);
-  border-color: var(--red);
-}
-
-button.day {
-  cursor: pointer;
-}
-
-.month-card.editable .day:not(.empty):hover {
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-
-/* ── Admin ─────────────────────────────────────────────── */
-
-.admin-shell {
-  gap: clamp(18px, 3vw, 30px);
-}
-
-.admin-hero,
-.admin-panel {
-  display: grid;
-  gap: 18px;
-  padding: clamp(22px, 4vw, 42px);
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: 14px;
-}
-
-.admin-hero {
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-}
-
-.admin-hero h1 {
-  max-width: 12ch;
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.admin-hero p:not(.eyebrow) {
-  max-width: 48ch;
-  margin: 14px 0 0;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.admin-hero strong {
-  padding: 12px 14px;
-  color: #fffdf6;
-  background: var(--accent-dark);
-  border-radius: 10px;
-}
-
-.admin-controls {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.admin-controls label {
-  display: grid;
-  gap: 7px;
-  color: var(--muted);
-  font-size: 0.84rem;
-  font-weight: 700;
-}
-
-.admin-controls input {
-  min-height: 44px;
-  width: 100%;
-  padding: 0 12px;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-}
-
-.admin-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.admin-actions button {
-  min-height: 44px;
-  padding: 0 16px;
-  color: #fffdf6;
-  background: var(--accent-dark);
-  border: 1px solid var(--accent-dark);
-  border-radius: 999px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.admin-actions button.secondary {
-  color: var(--ink);
-  background: transparent;
-  border-color: var(--line);
-}
-
 /* ── Reviews ───────────────────────────────────────────── */
 
 .reviews-section {
@@ -1834,8 +1592,7 @@ a:focus-visible {
   }
 
   .review-grid,
-  .values-strip,
-  .calendar-grid {
+  .values-strip {
     grid-template-columns: 1fr;
   }
 
@@ -1854,7 +1611,8 @@ a:focus-visible {
   }
 
   .listing-card .card-image {
-    min-height: 240px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .amenities-grid {
@@ -1903,12 +1661,6 @@ a:focus-visible {
     font-size: 0.88rem;
   }
 
-  .home-nav .disponibles-link {
-    min-height: 42px;
-    padding: 0 16px;
-    font-size: 0.92rem;
-  }
-
   .home-hero {
     min-height: 380px;
     padding: 22px;
@@ -1927,26 +1679,21 @@ a:focus-visible {
   }
 
   .reviews-section,
-  .availability-card,
   .amenities-section,
   .faq-section {
     padding: 20px;
-  }
-
-  .availability-card {
-    padding: 18px;
   }
 
   .listing-card .card-content {
     padding: 20px;
   }
 
-  .availability-head {
-    display: grid;
+  .card-summary {
+    font-size: 0.94rem;
   }
 
-  .availability-legend {
-    justify-content: flex-start;
+  .card-facts span {
+    padding: 6px 10px;
   }
 
   .review-meta span,

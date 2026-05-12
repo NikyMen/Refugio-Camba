@@ -1,4 +1,5 @@
 import Topbar from "../components/Topbar";
+import SiteFooter from "../components/SiteFooter";
 
 export const metadata = {
   title: "Nosotros | Refugio Camba",
@@ -39,6 +40,7 @@ export default function Nosotros() {
             <p>San Luis 1473, una dirección práctica para moverte por Corrientes.</p>
           </article>
         </section>
+        <SiteFooter />
       </section>
     </main>
   );

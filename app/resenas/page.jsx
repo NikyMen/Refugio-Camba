@@ -1,5 +1,6 @@
 import Topbar from "../components/Topbar";
 import ReviewsContent from "../components/ReviewsContent";
+import SiteFooter from "../components/SiteFooter";
 
 export const metadata = {
   title: "Reseñas | Refugio Camba",
@@ -12,6 +13,7 @@ export default function ResenasPage() {
       <section className="shell reviews-page" aria-label="Reseñas">
         <Topbar />
         <ReviewsContent compact />
+        <SiteFooter />
       </section>
     </main>
   );

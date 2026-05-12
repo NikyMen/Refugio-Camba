@@ -1,4 +1,5 @@
-export const phone = "5493790000000";
+export const phone = "5493794781906";
+export const displayPhone = "+54 9 3794 78-1906";
 
 export const waLink = (text) =>
   `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
@@ -31,9 +32,8 @@ export const listings = [
       { icon: "parking", label: "Estacionamiento cercano" },
       { icon: "security", label: "Edificio seguro" },
     ],
-    waText: "Hola, quiero consultar disponibilidad por San Luis 1473",
+    waText: "Hola, quiero consultar por San Luis 1473",
     mapQuery: "San Luis 1473 Corrientes Argentina",
-    available: true,
     spaces: [
       {
         id: "living",

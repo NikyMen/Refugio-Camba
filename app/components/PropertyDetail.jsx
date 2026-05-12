@@ -1,8 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import AvailabilityCalendar from "./AvailabilityCalendar";
-import DisponiblesLink from "./DisponiblesLink";
 import Icon from "./Icon";
 import Lightbox from "./Lightbox";
 import WhatsAppFab from "./WhatsAppFab";
@@ -12,7 +10,7 @@ import { mapsLink, waLink } from "../data/listings";
 const faqs = [
   {
     q: "¿Cómo confirmo la reserva?",
-    a: "Escribinos por WhatsApp con las fechas que te interesan. Te confirmamos disponibilidad y los pasos para reservar el mismo día.",
+    a: "Escribinos por WhatsApp con las fechas que te interesan. Te respondemos y te pasamos los pasos para reservar.",
   },
   {
     q: "¿Qué incluye la estadía?",
@@ -20,7 +18,7 @@ const faqs = [
   },
   {
     q: "¿Cuáles son los horarios de check-in y check-out?",
-    a: "Check-in desde las 14:00 y check-out hasta las 11:00. Si tu vuelo o viaje no coincide, lo coordinamos.",
+    a: "Check-in desde las 14:00 y check-out hasta las 11:00. Si tu viaje no coincide, lo coordinamos.",
   },
   {
     q: "¿Aceptan mascotas?",
@@ -55,7 +53,10 @@ export default function PropertyDetail({ listing }) {
     setPhotoIndex(next.photoIdx);
   };
 
-  const goToSpace = (idx) => { setSpaceIndex(idx); setPhotoIndex(0); };
+  const goToSpace = (idx) => {
+    setSpaceIndex(idx);
+    setPhotoIndex(0);
+  };
 
   const allPhotos = tour.map((t) => t.src);
   const openLightbox = () => setLightboxIndex(currentTourIndex);
@@ -66,19 +67,17 @@ export default function PropertyDetail({ listing }) {
   return (
     <main className="page prop-page">
       <div className="shell prop-shell">
-
-        {/* ── Header ── */}
         <header className="topbar">
           <a className="logo-link" href="/" aria-label="Ir al inicio">
             <img src="/assets/logo.png" alt="Refugio Camba" />
           </a>
           <nav className="home-nav" aria-label="Principal">
             <a href="/">Inicio</a>
-            <DisponiblesLink href="#disponibilidad" />
+            <a href="/nosotros">Nosotros</a>
+            <a href="/#resenas">Reseñas</a>
           </nav>
         </header>
 
-        {/* ── Property title ── */}
         <div className="prop-header">
           <div>
             <p className="eyebrow">{listing.eyebrow}</p>
@@ -92,12 +91,11 @@ export default function PropertyDetail({ listing }) {
           </div>
         </div>
 
-        {/* ── Photo gallery ── */}
         <div className="prop-gallery">
           <div className="gallery-main" onClick={openLightbox}>
             <img key={currentPhoto} src={currentPhoto} alt={currentSpace.title} className="gallery-img" />
 
-            <div className="gallery-nav" onClick={(e) => e.stopPropagation()}>
+            <div className="gallery-nav" onClick={(event) => event.stopPropagation()}>
               <button type="button" onClick={() => goToTour(-1)} aria-label="Foto anterior">
                 <Icon type="left" />
               </button>
@@ -109,7 +107,10 @@ export default function PropertyDetail({ listing }) {
             <button
               type="button"
               className="gallery-zoom"
-              onClick={(e) => { e.stopPropagation(); openLightbox(); }}
+              onClick={(event) => {
+                event.stopPropagation();
+                openLightbox();
+              }}
               aria-label="Ver en grande"
             >
               <Icon type="zoom" />
@@ -126,7 +127,6 @@ export default function PropertyDetail({ listing }) {
             </div>
           </div>
 
-          {/* Thumbnail strip */}
           <div className="gallery-thumbs" role="list" aria-label="Recorrido de ambientes">
             {listing.spaces.map((space, idx) => (
               <button
@@ -145,17 +145,13 @@ export default function PropertyDetail({ listing }) {
           </div>
         </div>
 
-        {/* ── Content + Sidebar ── */}
         <div className="prop-body">
           <div className="prop-content">
-
-            {/* Description */}
             <section className="prop-section" aria-labelledby="desc-title">
               <h2 id="desc-title">Sobre el departamento</h2>
               <p>{listing.summary}</p>
             </section>
 
-            {/* Room tour */}
             <section className="prop-section tour-section" aria-labelledby="tour-title">
               <h2 id="tour-title">Recorrido por ambientes</h2>
               <div className="space-rail">
@@ -173,7 +169,6 @@ export default function PropertyDetail({ listing }) {
               </div>
             </section>
 
-            {/* Amenities */}
             <section className="prop-section" aria-labelledby="amenities-title">
               <h2 id="amenities-title">Lo que encontrás</h2>
               <div className="amenities-grid">
@@ -187,10 +182,9 @@ export default function PropertyDetail({ listing }) {
             </section>
           </div>
 
-          {/* Sticky sidebar */}
           <aside className="prop-sidebar">
             <div className="sidebar-card">
-              <p className="sidebar-label">Consultá disponibilidad</p>
+              <p className="sidebar-label">Consultanos por WhatsApp</p>
               <p className="sidebar-desc">
                 Escribinos con las fechas que te interesan y te respondemos al instante.
               </p>
@@ -200,9 +194,6 @@ export default function PropertyDetail({ listing }) {
                 </svg>
                 Consultar por WhatsApp
               </a>
-              <a className="sidebar-secondary" href="#disponibilidad">
-                Ver fechas disponibles
-              </a>
               <a className="sidebar-map" href={map} target="_blank" rel="noreferrer">
                 <Icon type="pin" />
                 {listing.location}
@@ -211,12 +202,6 @@ export default function PropertyDetail({ listing }) {
           </aside>
         </div>
 
-        {/* ── Availability ── */}
-        <div id="disponibilidad">
-          <AvailabilityCalendar title={`Disponibilidad · ${listing.title}`} compact />
-        </div>
-
-        {/* ── FAQ ── */}
         <section className="faq-section" aria-labelledby="faq-title">
           <div>
             <p className="eyebrow">Preguntas frecuentes</p>

@@ -1,4 +1,4 @@
-import { phone, waLink } from "../data/listings";
+import { displayPhone, waLink } from "../data/listings";
 
 export default function SiteFooter() {
   return (
@@ -14,14 +14,14 @@ export default function SiteFooter() {
             WhatsApp directo
           </a>
         </p>
-        <p>+{phone.replace(/(\d{2})(\d{2})(\d{3})(\d{7})/, "$1 $2 $3 $4")}</p>
+        <p>{displayPhone}</p>
       </div>
       <div>
         <h4>Navegación</h4>
         <p>
           <a href="/">Inicio</a>
           <br />
-          <a href="/alquiler-1473#disponibilidad">Disponibles</a>
+          <a href="/alquiler-1473">Alquiler</a>
         </p>
       </div>
       <div className="footer-bottom">

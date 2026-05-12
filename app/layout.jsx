@@ -5,9 +5,9 @@ export const metadata = {
   description:
     "Estadías cuidadas para llegar y disfrutar Corrientes. Refugio Camba ofrece alquileres temporarios cálidos, ordenados y bien ubicados.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
