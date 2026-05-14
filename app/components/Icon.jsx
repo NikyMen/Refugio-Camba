@@ -97,6 +97,24 @@ const icons = {
       <path d="M10 17V8h3.5a2.5 2.5 0 0 1 0 5H10" />
     </>
   ),
+  waterfront: (
+    <>
+      <path d="M4 11h16" />
+      <path d="M6 11v5M10 11v5M14 11v5M18 11v5" />
+      <path d="M5 8c2-1.3 4.3-2 7-2s5 .7 7 2" />
+      <path d="M3 18c2-1.2 4-1.2 6 0s4 1.2 6 0 4-1.2 6 0" />
+      <path d="M3 21c2-1.2 4-1.2 6 0s4 1.2 6 0 4-1.2 6 0" />
+    </>
+  ),
+  beach: (
+    <>
+      <circle cx="18" cy="6" r="3" />
+      <path d="M3 20c3-2 6-2 9 0 3-2 6-2 9 0" />
+      <path d="M5 13a8 8 0 0 1 14 0H5Z" />
+      <path d="M12 13v7" />
+      <path d="M8 13c.7-2.3 2-4 4-4s3.3 1.7 4 4" />
+    </>
+  ),
   security: (
     <>
       <path d="M12 3 5 6v6c0 4.5 3 8 7 9 4-1 7-4.5 7-9V6l-7-3Z" />
@@ -109,13 +127,20 @@ const icons = {
       fill="currentColor"
     />
   ),
+  airbnb: (
+    <path
+      d="M12 17.9c-1.8-2.2-3-4.1-3-5.8 0-1.8 1.2-3.2 3-3.2s3 1.4 3 3.2c0 1.7-1.2 3.6-3 5.8Zm0-2.7c.9-1.2 1.4-2.3 1.4-3.1 0-.9-.5-1.5-1.4-1.5s-1.4.6-1.4 1.5c0 .8.5 1.9 1.4 3.1Zm7.4 5.3c-2.1 1.2-4.5-.2-7.4-3.5-2.9 3.3-5.3 4.7-7.4 3.5-1.8-1-2.2-3.1-.9-5.5L8 7c1-1.9 2.3-2.8 4-2.8s3 .9 4 2.8l4.3 8c1.3 2.4.9 4.5-.9 5.5Zm-1-4.8-4.3-8C13.5 6.5 12.9 6 12 6s-1.5.5-2.1 1.7l-4.3 8c-.8 1.5-.7 2.6.2 3.1 1 .6 2.5-.2 5-3.1l1.2-1.4 1.2 1.4c2.5 2.9 4 3.7 5 3.1.9-.5 1-1.6.2-3.1Z"
+      fill="currentColor"
+      stroke="none"
+    />
+  ),
   arrow: <path d="M5 12h14m-5-5 5 5-5 5" />,
 };
 
 export default function Icon({ type, ...props }) {
   const node = icons[type];
   if (!node) return null;
-  const isFilled = type === "wa";
+  const isFilled = type === "wa" || type === "airbnb";
   return (
     <svg
       className="icon"

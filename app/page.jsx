@@ -35,7 +35,7 @@ export default function Home() {
           <div className="listing-grid">
             <a className="listing-card" href="/alquiler-1473">
               <div className="card-image">
-                <img src="/assets/refugio-camba/living.jpg" alt="Living de San Luis 1473" />
+                <img src="/assets/refugio-camba/dormitorio-1.jpg" alt="Dormitorio de San Luis 1473" />
                 <span className="listing-badge">Alquiler temporal</span>
               </div>
               <div className="card-content">

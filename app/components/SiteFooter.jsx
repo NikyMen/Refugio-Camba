@@ -1,6 +1,10 @@
-import { displayPhone, waLink } from "../data/listings";
+import { displayPhone, listings, waLink } from "../data/listings";
+import Icon from "./Icon";
 
 export default function SiteFooter() {
+  const airbnbUrl = listings[0]?.airbnbUrl;
+  const whatsappUrl = waLink("Hola, quiero mas informacion sobre Refugio Camba");
+
   return (
     <footer className="site-footer">
       <div>
@@ -9,12 +13,37 @@ export default function SiteFooter() {
       </div>
       <div>
         <h4>Contacto</h4>
-        <p>
-          <a href={waLink("Hola, quiero más información sobre Refugio Camba")} target="_blank" rel="noreferrer">
-            WhatsApp directo
+        <div className="footer-contact-list">
+          {airbnbUrl && (
+            <a className="footer-contact-link" href={airbnbUrl} target="_blank" rel="noreferrer">
+              <span className="footer-contact-icon">
+                <Icon type="airbnb" />
+              </span>
+              <span className="footer-contact-text">
+                <strong>Airbnb</strong>
+                <span>Ver disponibilidad</span>
+              </span>
+            </a>
+          )}
+          <a className="footer-contact-link" href={whatsappUrl} target="_blank" rel="noreferrer">
+            <span className="footer-contact-icon">
+              <Icon type="wa" />
+            </span>
+            <span className="footer-contact-text">
+              <strong>WhatsApp directo</strong>
+              <span>Respuesta rápida</span>
+            </span>
           </a>
-        </p>
-        <p>{displayPhone}</p>
+          <a className="footer-contact-link" href={whatsappUrl} target="_blank" rel="noreferrer">
+            <span className="footer-contact-icon">
+              <Icon type="phone" />
+            </span>
+            <span className="footer-contact-text">
+              <strong>{displayPhone}</strong>
+              <span>Consultas y reservas</span>
+            </span>
+          </a>
+        </div>
       </div>
       <div>
         <h4>Navegación</h4>
