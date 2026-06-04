@@ -50,7 +50,7 @@ export default function SiteFooter() {
         <p>
           <a href="/">Inicio</a>
           <br />
-          <a href="/alquiler-1473">Alquiler</a>
+          <a href="/#alquileres">Alquiler</a>
         </p>
       </div>
       <div className="footer-bottom">

@@ -15,7 +15,7 @@ export default function Home() {
             <h1>Tu lugar tranquilo en Corrientes</h1>
             <p>Una estadía simple, cálida y bien ubicada para moverte fácil por la ciudad.</p>
           </div>
-          <a href="/alquiler-1473">Ver alquiler</a>
+          <a href="/#alquileres">Ver alquileres</a>
         </section>
 
         <section className="featured-section" id="alquileres" aria-labelledby="alquileres-title">
@@ -24,8 +24,8 @@ export default function Home() {
               <p className="eyebrow">Alquileres temporales</p>
               <h2 id="alquileres-title">Un refugio listo para disfrutar Corrientes</h2>
             </div>
-            <a className="section-cta" href="/alquiler-1473">
-              Ver detalle
+            <a className="section-cta" href="/#alquileres">
+              Ver alquileres
               <Icon type="arrow" />
             </a>
           </div>
@@ -54,6 +54,34 @@ export default function Home() {
                   <span>2 huéspedes</span>
                   <span>1 dormitorio</span>
                   <span>Balcón</span>
+                </div>
+                <span className="card-cta">
+                  Ver el alquiler
+                  <Icon type="arrow" />
+                </span>
+              </div>
+            </a>
+            <a className="listing-card" href="/alquiler-bolivar-625">
+              <div className="card-image">
+                <img src="/assets/refugio-camba/depto-bolivar/dormitorio-1.jpg" alt="Dormitorio de Bolívar 625" />
+                <span className="listing-badge">Alquiler temporal</span>
+              </div>
+              <div className="card-content">
+                <div className="card-top">
+                  <span className="listing-eyebrow">Refugio Camba</span>
+                  <h2>Bolívar 625</h2>
+                  <p className="listing-location">
+                    <Icon type="pin" />
+                    Corrientes Capital
+                  </p>
+                </div>
+                <p className="card-summary">
+                  Monoambiente moderno y luminoso en un edificio nuevo del centro, con galería y vista a la ciudad.
+                </p>
+                <div className="card-facts">
+                  <span>2 huéspedes</span>
+                  <span>Monoambiente</span>
+                  <span>Galería</span>
                 </div>
                 <span className="card-cta">
                   Ver el alquiler

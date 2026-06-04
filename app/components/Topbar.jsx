@@ -8,7 +8,7 @@ export default function Topbar() {
         <a href="/">Inicio</a>
         <a href="/nosotros">Nosotros</a>
         <a href="/#resenas">Reseñas</a>
-        <a className="primary" href="/alquiler-1473">Alquiler</a>
+        <a className="primary" href="/#alquileres">Alquiler</a>
       </nav>
     </header>
   );

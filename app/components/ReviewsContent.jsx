@@ -18,7 +18,7 @@ export default function ReviewsContent({ compact = false }) {
         >
           5,0 · 4 evaluaciones
         </a>
-        <button type="button" className="review-info-button" popovertarget="review-info-popover">
+        <button type="button" className="review-info-button" popoverTarget="review-info-popover">
           Cómo funcionan las evaluaciones
         </button>
         <a
@@ -130,8 +130,8 @@ export default function ReviewsContent({ compact = false }) {
         <button
           type="button"
           className="review-modal-close"
-          popovertarget="review-info-popover"
-          popovertargetaction="hide"
+          popoverTarget="review-info-popover"
+          popoverTargetAction="hide"
           aria-label="Cerrar"
         >
           <Icon type="close" />
