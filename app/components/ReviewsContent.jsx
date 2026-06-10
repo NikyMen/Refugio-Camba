@@ -1,6 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import Icon from "./Icon";
 
+const REVIEW_VIDEOS = [
+  { src: "/assets/refugio-camba/refugio-camba-video.mp4", label: "Video de Refugio Camba" },
+  { src: "/assets/refugio-camba/refugio-camba-bolivar.mp4", label: "Video de Refugio Camba - Bolívar" },
+];
+
 export default function ReviewsContent({ compact = false }) {
+  const [videoIndex, setVideoIndex] = useState(0);
+  const total = REVIEW_VIDEOS.length;
+  const goPrev = () => setVideoIndex((i) => (i - 1 + total) % total);
+  const goNext = () => setVideoIndex((i) => (i + 1) % total);
+  const currentVideo = REVIEW_VIDEOS[videoIndex];
+
   return (
     <section className={compact ? "reviews-section compact-page" : "reviews-section"} id="resenas" aria-labelledby="reviews-title">
       <div className="reviews-head">
@@ -31,10 +45,52 @@ export default function ReviewsContent({ compact = false }) {
       </div>
 
       <div className="review-video-wrap">
-        <video className="review-video" controls preload="metadata" playsInline aria-label="Video de Refugio Camba">
-          <source src="/assets/refugio-camba/refugio-camba-video.mp4" type="video/mp4" />
+        {total > 1 && (
+          <button
+            type="button"
+            className="review-video-nav review-video-nav--prev"
+            onClick={goPrev}
+            aria-label="Video anterior"
+          >
+            <Icon type="left" />
+          </button>
+        )}
+        <video
+          key={currentVideo.src}
+          className="review-video"
+          controls
+          preload="metadata"
+          playsInline
+          aria-label={currentVideo.label}
+        >
+          <source src={currentVideo.src} type="video/mp4" />
           Tu navegador no puede reproducir este video.
         </video>
+        {total > 1 && (
+          <button
+            type="button"
+            className="review-video-nav review-video-nav--next"
+            onClick={goNext}
+            aria-label="Video siguiente"
+          >
+            <Icon type="right" />
+          </button>
+        )}
+        {total > 1 && (
+          <div className="review-video-dots" role="tablist" aria-label="Seleccionar video">
+            {REVIEW_VIDEOS.map((v, i) => (
+              <button
+                key={v.src}
+                type="button"
+                className={i === videoIndex ? "review-video-dot is-active" : "review-video-dot"}
+                onClick={() => setVideoIndex(i)}
+                aria-label={`Ver video ${i + 1}`}
+                aria-selected={i === videoIndex}
+                role="tab"
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="review-grid">

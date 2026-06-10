@@ -1481,6 +1481,7 @@ h4 {
 }
 
 .review-video-wrap {
+  position: relative;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -1488,6 +1489,91 @@ h4 {
   background: rgba(251, 243, 223, 0.1);
   border: 1px solid rgba(251, 243, 223, 0.2);
   border-radius: 14px;
+}
+
+.review-video-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: #fffdf6;
+  background: rgba(20, 16, 10, 0.55);
+  border: 1px solid rgba(251, 243, 223, 0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.review-video-nav:hover,
+.review-video-nav:focus-visible {
+  background: rgba(20, 16, 10, 0.8);
+  border-color: rgba(251, 243, 223, 0.6);
+}
+
+.review-video-nav:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+.review-video-nav .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.review-video-nav--prev {
+  left: 16px;
+}
+
+.review-video-nav--next {
+  right: 16px;
+}
+
+.review-video-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(20, 16, 10, 0.45);
+  border-radius: 999px;
+}
+
+.review-video-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  background: rgba(251, 243, 223, 0.45);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.review-video-dot.is-active {
+  background: #fffdf6;
+  transform: scale(1.25);
+}
+
+@media (max-width: 540px) {
+  .review-video-nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .review-video-nav--prev {
+    left: 8px;
+  }
+
+  .review-video-nav--next {
+    right: 8px;
+  }
 }
 
 .review-video {
